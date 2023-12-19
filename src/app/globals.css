@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@layer base {
+  h1{
+    @apply text-3xl;
+    @apply font-bold;
+    @apply md:text-5xl;
+  }
+  h2 {
+    @apply text-2xl;
+    @apply lg:text-3xl;
+    @apply font-semibold;
+  }
+  h3{
+    @apply text-xl;
+    @apply font-semibold;
+    @apply 2xl:text-xl;
+  }
+  h4{
+    @apply text-lg;
+    @apply font-semibold;
+  }
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +54,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
