@@ -1,19 +1,9 @@
 'use client'
+import { type Option, type QuestionProps } from '@/app/interfaces/intefaces'
 import { Icon } from '@iconify/react/dist/iconify.js'
+import { Button, Card } from '@nextui-org/react'
 import clsx from 'clsx'
 import { useState } from 'react'
-
-interface QuestionProps {
-  question: {
-    title: string
-    options: Option[]
-  }
-}
-
-interface Option {
-  answer: string
-  isCorrect: boolean
-}
 
 export default function Question({ question }: QuestionProps): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<Option | null>(null)
@@ -33,7 +23,7 @@ export default function Question({ question }: QuestionProps): JSX.Element {
   }
 
   return (
-    <div className="flex h-full min-h-[38rem] flex-col items-center justify-center gap-4 rounded-md border-2 border-zinc-300 p-4 dark:border-black dark:shadow-md dark:shadow-black">
+    <Card className="flex h-full min-h-[38rem] flex-col items-center justify-center gap-4 p-4">
       {!showResult && (
         <header className="flex items-start gap-1">
           <h3>{question.title}</h3>
@@ -41,20 +31,23 @@ export default function Question({ question }: QuestionProps): JSX.Element {
       )}
       {!showResult ? (
         question.options.map((option, index) => (
-          <button
+          <Card
+            isPressable
+            isHoverable
             className={clsx(
-              'w-full cursor-pointer rounded-md border-2 border-gray-200 p-4 transition-all duration-300 ease-in-out hover:bg-gray-100',
+              'w-full cursor-pointer p-4 hover:bg-gray-200 dark:hover:bg-zinc-600',
               {
-                'bg-gray-300': !showResult && selectedOption === option,
+                'bg-gray-300 dark:bg-zinc-700':
+                  !showResult && selectedOption === option,
               },
             )}
             key={index}
-            onClick={() => {
+            onPress={() => {
               setSelectedOption(option)
             }}
           >
             {option.answer}
-          </button>
+          </Card>
         ))
       ) : isCorrect ? (
         <p className="flex items-center justify-center gap-1 text-2xl font-bold text-emerald-500">
@@ -73,23 +66,25 @@ export default function Question({ question }: QuestionProps): JSX.Element {
             />
             Respuesta incorrecta
           </p>
-          <button
+          <Button
             onClick={retry}
+            color="primary"
+            endContent={<Icon icon="pajamas:retry" />}
             className="flex w-full items-center justify-center gap-1 rounded-md bg-red-500 py-2 text-lg font-bold text-white"
           >
             Reintentar
-            <Icon icon="pajamas:retry" className="h-auto w-4" />
-          </button>
+          </Button>
         </div>
       )}
       {!showResult && (
-        <button
+        <Button
+          color="primary"
           className="w-full rounded-md bg-red-500 py-2 font-bold text-white"
           onClick={verifyAnswer}
         >
           Verificar respuesta
-        </button>
+        </Button>
       )}
-    </div>
+    </Card>
   )
 }
