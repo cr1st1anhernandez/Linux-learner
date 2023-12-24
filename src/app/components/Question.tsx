@@ -23,12 +23,8 @@ export default function Question({ question }: QuestionProps): JSX.Element {
   }
 
   return (
-    <Card className="flex h-full min-h-[38rem] flex-col items-center justify-center gap-4 p-4">
-      {!showResult && (
-        <header className="flex items-start gap-1">
-          <h3>{question.title}</h3>
-        </header>
-      )}
+    <Card className="flex h-full min-h-[28rem] flex-col items-center justify-between gap-4 p-4">
+      {!showResult && <h3>{question.title}</h3>}
       {!showResult ? (
         question.options.map((option, index) => (
           <Card

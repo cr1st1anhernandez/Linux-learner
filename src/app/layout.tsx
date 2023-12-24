@@ -22,10 +22,10 @@ export default function RootLayout({
       <link rel="icon" href="/icon.png" sizes="any" />
       <body className={inter.className}>
         <Providers>
-          <section className="min-h-screen bg-white pb-8 dark:bg-[#121212] dark:text-white">
+          <section className="min-h-screen bg-[#fffffe] pb-8 text-black red-light dark:bg-[#121212] dark:text-[#d4d4d4] dark:red-dark">
             <Banner />
             <Nav />
-            <section className="bg-white px-8 dark:bg-[#121212] dark:text-white">
+            <section className="px-6 red-light dark:red-dark">
               {children}
             </section>
           </section>

@@ -28,7 +28,7 @@ const config: Config = {
           extend: 'dark',
           colors: {
             background: '#121212',
-            foreground: '#ffffff',
+            foreground: '#d4d4d8',
             primary: {
               50: '#fef2f2',
               100: '#fee2e2',
@@ -62,7 +62,7 @@ const config: Config = {
         'red-light': {
           extend: 'light',
           colors: {
-            background: '#fff',
+            background: '#fffffe',
             foreground: '#000',
             primary: {
               50: '#fef2f2',

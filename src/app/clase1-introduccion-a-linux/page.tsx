@@ -5,7 +5,7 @@ import Title from '@/app/components/Title'
 
 export default function page(): JSX.Element {
   return (
-    <section className="flex flex-col gap-2 dark:bg-[#121212] dark:text-zinc-300">
+    <section className="flex flex-col gap-2">
       <nav className="flex flex-col-reverse items-end gap-2 sm:flex-row sm:items-center">
         <Title
           title="Introducción"
