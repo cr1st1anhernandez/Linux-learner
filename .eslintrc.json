@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": [
+    "next/core-web-vitals",
     "standard-with-typescript",
     "plugin:react/recommended",
     "prettier"
@@ -16,5 +17,10 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
