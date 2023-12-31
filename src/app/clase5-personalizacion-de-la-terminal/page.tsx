@@ -154,12 +154,16 @@ export default function page(): JSX.Element {
             </Snippet>
             <p>Instala la fuente con el siguiente comando</p>
             <Snippet tooltipProps={{ content: 'copiar', delay: 0 }}>
-              wget
-              https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+              <code className="overflow-x-scroll whitespace-pre-wrap break-all">
+                wget
+                https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+              </code>
             </Snippet>
             <p>Copia el archivo a la ruta /usr/share/fonts</p>
             <Snippet tooltipProps={{ content: 'copiar', delay: 0 }}>
-              sudo cp -r ~/Descargas/Hack.zip /usr/share/fonts
+              <code className="overflow-x-scroll whitespace-pre-wrap break-all">
+                sudo cp -r ~/Descargas/Hack.zip /usr/share/fonts
+              </code>
             </Snippet>
             <p>Ahora entra a la carpeta de fuentes /usr/share/fonts</p>
             <Snippet tooltipProps={{ content: 'copiar', delay: 0 }}>
@@ -185,7 +189,9 @@ export default function page(): JSX.Element {
                 delay: 0,
               }}
             >
-              curl -sS https://starship.rs/install.sh | sh
+              <code className="overflow-x-scroll whitespace-pre-wrap break-all">
+                curl -sS https://starship.rs/install.sh | sh
+              </code>
             </Snippet>
             <p>
               Si no tienes el archivo de configuración por defecto de starship
@@ -248,7 +254,9 @@ export default function page(): JSX.Element {
                 delay: 0,
               }}
             >
-              sudo add-apt-repository ppa:mmstick76/alacritty
+              <code className="overflow-x-scroll whitespace-pre-wrap break-all">
+                sudo add-apt-repository ppa:mmstick76/alacritty
+              </code>
             </Snippet>
             <p>Actualiza el índice de paquetes</p>
             <Snippet
@@ -275,7 +283,9 @@ export default function page(): JSX.Element {
                 delay: 0,
               }}
             >
-              sudo update-alternatives --config x-terminal-emulator
+              <code className="overflow-x-scroll whitespace-pre-wrap break-all">
+                sudo update-alternatives --config x-terminal-emulator
+              </code>
             </Snippet>
             <p>
               Ahora puedes buscar alacritty dentro de tus aplicaciones o
@@ -304,7 +314,9 @@ export default function page(): JSX.Element {
                 delay: 0,
               }}
             >
-              touch .config/alacritty/alacritty.yml
+              <code className="overflow-x-scroll whitespace-pre-wrap break-all">
+                touch .config/alacritty/alacritty.yml
+              </code>
             </Snippet>
             <h4>Mi configuración de alacritty:</h4>
             <p>
