@@ -1,10 +1,7 @@
 'use client'
-
+import { Icon } from '@iconify/react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { MdSunny } from 'react-icons/md'
-import { WiMoonAltFirstQuarter } from 'react-icons/wi'
-
 export function ThemeSwitcher(): JSX.Element {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
@@ -16,25 +13,26 @@ export function ThemeSwitcher(): JSX.Element {
   if (!mounted) return <></>
 
   return (
-    <div className="flex items-center">
+    <>
       {theme === 'light' ? (
         <button
-          className="text-red-400"
+          className=""
           onClick={() => {
             setTheme('dark')
           }}
         >
-          <WiMoonAltFirstQuarter className="h-6 w-6" />
+          <Icon className="size-6" icon="line-md:moon-alt-loop" />
         </button>
       ) : (
         <button
+          className="text-white"
           onClick={() => {
             setTheme('light')
           }}
         >
-          <MdSunny className="h-6 w-6" />
+          <Icon className="size-6" icon="line-md:sun-rising-filled-loop" />
         </button>
       )}
-    </div>
+    </>
   )
 }

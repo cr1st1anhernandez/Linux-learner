@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://CRISTIAN-NEFTAL-HERN-NDEZ-RAM-REZ-s-workspace-f35ttc.us-east-1.xata.sh/db/linux-learner-database",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

@@ -12,46 +12,35 @@
 
 @layer base {
   h1{
+   @apply text-balance;
+   @apply text-5xl;
+   @apply font-bold;
+   @apply sm:text-7xl;
+   @apply lg:text-8xl;
+   @apply xl:text-6xl;
+   @apply 2xl:text-8xl;
+  }
+  h2{
     @apply text-3xl;
     @apply font-bold;
     @apply md:text-5xl;
   }
-  h2 {
+  h3 {
     @apply text-2xl;
     @apply lg:text-3xl;
     @apply font-semibold;
   }
-  h3{
+  h4{
     @apply text-xl;
     @apply font-semibold;
-    @apply 2xl:text-xl;
+    @apply 2xl:text-2xl;
   }
-  h4{
+  h5{
     @apply text-lg;
     @apply font-semibold;
   }
 }
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */

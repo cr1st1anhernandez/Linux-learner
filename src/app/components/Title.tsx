@@ -1,4 +1,4 @@
-import { NavigateButtton } from '@/app/components/NavigateButton'
+import { ButtonArrow } from '@/app/components/ButtonArrow'
 
 interface TitleProps {
   title: string
@@ -12,12 +12,12 @@ export default function Title({
   nextRoute,
 }: TitleProps): JSX.Element {
   return (
-    <>
-      <h1 className="w-full">{title}</h1>
+    <nav className="flex flex-col-reverse items-end gap-2 sm:flex-row sm:items-center">
+      <h2 className="w-full">{title}</h2>
       <div className="flex w-fit gap-2">
-        <NavigateButtton text="anterior" route={previousRoute} />
-        <NavigateButtton text="siguiente" route={nextRoute} />
+        <ButtonArrow iconPosition="back" route={previousRoute} />
+        <ButtonArrow iconPosition="forward" route={nextRoute} />
       </div>
-    </>
+    </nav>
   )
 }

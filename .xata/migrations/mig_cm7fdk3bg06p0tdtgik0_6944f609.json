@@ -1,0 +1,14 @@
+{
+  "id": "mig_cm7fdk3bg06p0tdtgik0",
+  "parentID": "mig_cm7fcb3bg06p0tdtgij0",
+  "checksum": "1:6944f6092e41dff8fb38eb8861b6526e64a8aef9657ccc696b0f79d5900e767a",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "owner",
+        "oldName": "userName",
+        "table": "comments"
+      }
+    }
+  ]
+}

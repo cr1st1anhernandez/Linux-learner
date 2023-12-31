@@ -1,10 +1,10 @@
 'use client'
+import { Beaker } from '@/app/icons/Beaker'
+import { Github } from '@/app/icons/Github'
+import { LogIn } from '@/app/icons/LogIn'
 import { Button, Link } from '@nextui-org/react'
 import Image from 'next/image'
 import { useState } from 'react'
-import { FaGithub } from 'react-icons/fa'
-import { FiLogIn } from 'react-icons/fi'
-import { HiMiniBeaker } from 'react-icons/hi2'
 
 export default function Home(): JSX.Element {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -14,11 +14,9 @@ export default function Home(): JSX.Element {
   }
 
   return (
-    <section className="mx-auto flex flex-col items-center justify-between pt-12 red-light dark:red-dark md:w-5/6 xl:flex-row">
+    <section className="mx-auto flex flex-col items-center justify-center red-light md:w-5/6 xl:flex-row dark:red-dark">
       <article className="flex h-fit flex-col justify-center gap-2 sm:gap-8 xl:w-1/2">
-        <h1 className=" text-5xl font-bold  sm:text-7xl lg:text-8xl xl:text-6xl 2xl:text-8xl">
-          ¡Descubre el poder de linux desde cero!
-        </h1>
+        <h1>¡Descubre el poder de linux desde cero!</h1>
         <p className="text-left text-zinc-500">
           Una herramienta que proporciona una base sólida para entrar al mundo
           de Linux desarrollando una sólida comprensión de Linux en general.
@@ -31,7 +29,7 @@ export default function Home(): JSX.Element {
             href="clase1-introduccion-a-linux"
             as={Link}
             showAnchorIcon
-            anchorIcon={<HiMiniBeaker />}
+            anchorIcon={<Beaker />}
             color="primary"
             variant="solid"
           >
@@ -42,10 +40,9 @@ export default function Home(): JSX.Element {
             href="https://github.com/cr1st1anhernandez/linux-learner"
             as={Link}
             showAnchorIcon
-            anchorIcon={<FaGithub />}
+            anchorIcon={<Github />}
             variant="solid"
-            target="_blank"
-            rel="noopener noreferrer"
+            isExternal
           >
             Github
           </Button>
@@ -54,7 +51,7 @@ export default function Home(): JSX.Element {
             href="/sign-in"
             as={Link}
             showAnchorIcon
-            anchorIcon={<FiLogIn />}
+            anchorIcon={<LogIn />}
             variant="solid"
           >
             Iniciar sesión

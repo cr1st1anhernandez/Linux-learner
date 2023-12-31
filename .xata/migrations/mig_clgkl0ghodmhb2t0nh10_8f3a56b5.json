@@ -1,0 +1,12 @@
+{
+  "id": "mig_clgkl0ghodmhb2t0nh10",
+  "parentID": "mig_clfar2p5e5nqopfgj9a0",
+  "checksum": "1:8f3a56b5883a003b95e020c0690ee6af29d0caa5d672a777e20743a94077cc33",
+  "operations": [
+    {
+      "addTable": {
+        "table": "comments"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mig_cm65m8i44015etohkua0",
+  "parentID": "mig_clglp58hodmhb2t0nll0",
+  "checksum": "1:adb7f792f538a03a2edde340c4a2870351ec3d4d313824430c67eeca78ecda6a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "likes",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "0"
+        },
+        "table": "comments"
+      }
+    }
+  ]
+}

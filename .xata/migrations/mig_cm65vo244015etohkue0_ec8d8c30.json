@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm65vo244015etohkue0",
+  "parentID": "mig_cm65m8i44015etohkua0",
+  "checksum": "1:ec8d8c303b2a3f7e736cfa5d4d88204897df423b44f3976065bd982c5db0b730",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "replies",
+          "type": "json"
+        },
+        "table": "comments"
+      }
+    }
+  ]
+}

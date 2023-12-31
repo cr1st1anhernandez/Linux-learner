@@ -1,48 +1,21 @@
 'use client'
+import { question1 } from '@/app/clase2-instalacion-de-ubuntu/data'
 import Question from '@/app/components/Question'
 import Title from '@/app/components/Title'
 import { Card, Link } from '@nextui-org/react'
 
 export default function ubuntuPage(): JSX.Element {
-  const question = {
-    title:
-      '¿A qué nos referimos cuando decimos que haremos una instalación dual-boot?',
-    options: [
-      {
-        answer:
-          'Instalar dos sistemas operativos en dos discos duros diferentes.',
-        isCorrect: false,
-      },
-      {
-        answer:
-          'Crear dos particiones en un disco duro para instalar dos sistemas operativos diferentes.',
-        isCorrect: true,
-      },
-      {
-        answer:
-          'Realizar la instalación de dos sistemas operativos en paralelo, uno virtual y otro físico.',
-        isCorrect: false,
-      },
-      {
-        answer:
-          'Instalar dos sistemas operativos, uno de 32 bits y otro de 64 bits, en la misma partición.',
-        isCorrect: false,
-      },
-    ],
-  }
   return (
-    <section className="flex flex-col gap-2">
-      <nav className="flex flex-col-reverse items-end gap-2 sm:flex-row sm:items-center">
-        <Title
-          title="Instalación de ubuntu"
-          previousRoute="/clase1-introduccion-a-linux"
-          nextRoute="/clase3-introduccion-a-la-terminal"
-        />
-      </nav>
-      <section className="flex flex-col gap-8 lg:flex-row">
+    <section className="flex flex-col gap-4">
+      <Title
+        title="Instalación de ubuntu"
+        previousRoute="/clase1-introduccion-a-linux"
+        nextRoute="/clase3-introduccion-a-la-terminal"
+      />
+      <main className="flex flex-col gap-8 lg:flex-row">
         <aside className="flex flex-col gap-4 lg:w-1/2">
           <article>
-            <h2>Instalación en nuestra maquina.</h2>
+            <h3>Instalación en nuestra maquina.</h3>
             <p>
               Instalar directamente en nuestra maquina nos permite instalarlo
               junto a windows y cada que iniciemos nuestro pc nos pregunte el si
@@ -56,7 +29,7 @@ export default function ubuntuPage(): JSX.Element {
             </Card>
           </article>
           <article>
-            <h3>1. Descargar la imagen de ubuntu:</h3>
+            <h4>1. Descargar la imagen de ubuntu:</h4>
             <p>
               Puedes optar por la versión LTS (Long Term Support) para obtener
               actualizaciones de soporte a largo plazo. Visita el siguiente link
@@ -67,14 +40,12 @@ export default function ubuntuPage(): JSX.Element {
               href="https://ubuntu.com/download/desktop"
               className="font-bold"
               showAnchorIcon
-              rel="noreferrer"
-              target="_blank"
             >
               https://ubuntu.com/download/desktop
             </Link>
           </article>
           <article>
-            <h3>2. Crear un medio de instalación:</h3>
+            <h4>2. Crear un medio de instalación:</h4>
             <p>
               Conectar una USB vacía de al menos 4 GB de capacidad, para crear
               un medio de instalación en nuestro caso usaremos Rufus, descarga y
@@ -85,8 +56,6 @@ export default function ubuntuPage(): JSX.Element {
               href="https://rufus.ie/es/"
               className="font-bold"
               showAnchorIcon
-              rel="noreferrer"
-              target="_blank"
             >
               https://rufus.ie/es/
             </Link>
@@ -115,7 +84,7 @@ export default function ubuntuPage(): JSX.Element {
             </Card>
           </article>
           <article>
-            <h3>3. Instalar ubuntu desde la USB:</h3>
+            <h4>3. Instalar ubuntu desde la USB:</h4>
             <p>
               Si usas windows puede que sea necesario desactivar el arranque
               rápido para ello:
@@ -161,14 +130,14 @@ export default function ubuntuPage(): JSX.Element {
             </Card>
           </article>
           <article>
-            <h3>4. Primer inicio de ubuntu.</h3>
+            <h4>4. Primer inicio de ubuntu.</h4>
             <p>
               Inicia el sistema y te aparecerá la pantalla de instalación de
               ubuntu, selecciona la opción Probar o Instalar ubuntu.
             </p>
           </article>
           <article>
-            <h3>5. Instalador de ubuntu.</h3>
+            <h4>5. Instalador de ubuntu.</h4>
             <Card radius="md" className="my-2 p-4">
               <p>
                 <span className="font-bold">Muy Importante: </span>
@@ -196,7 +165,7 @@ export default function ubuntuPage(): JSX.Element {
         </aside>
         <aside className="flex flex-col gap-4 lg:w-1/2">
           <article>
-            <h2>Instalación en maquina virtual.</h2>
+            <h3>Instalación en maquina virtual.</h3>
             <p>
               La opción de instalarlo mediante una maquina virtual es tener
               básicamente un ubuntu dentro de tu windows o macOS.
@@ -210,35 +179,31 @@ export default function ubuntuPage(): JSX.Element {
             </Card>
           </article>
           <article>
-            <h3>1. Descargar la iso de ubuntu</h3>
+            <h4>1. Descargar la iso de ubuntu</h4>
             <p>Visita el siguiente link para descargar la imagen de ubuntu:</p>
             <Link
               isExternal
               href="https://ubuntu.com/download/desktop"
               className="font-bold"
               showAnchorIcon
-              rel="noreferrer"
-              target="_blank"
             >
               https://ubuntu.com/download/desktop
             </Link>
           </article>
           <article>
-            <h3>2. Descargar e instalar virtualBox.</h3>
+            <h4>2. Descargar e instalar virtualBox.</h4>
             <p>Descarga e instala VirtualBox desde el siguiente enlace:</p>
             <Link
               isExternal
               href="https://www.virtualbox.org/wiki/Downloads"
               className="font-bold"
               showAnchorIcon
-              rel="noreferrer"
-              target="_blank"
             >
-              https://www.virtualbox.org/wiki/Downloads
+              https://www.virtualbox.org/
             </Link>
           </article>
           <article>
-            <h3>3. Configurar la maquina virtual</h3>
+            <h4>3. Configurar la maquina virtual</h4>
             <p>
               Después de instalar virtualBox, ábrelo utilizando el acceso
               directo del escritorio y selecciona la opción Nueva para crear una
@@ -270,7 +235,7 @@ export default function ubuntuPage(): JSX.Element {
             </ul>
           </article>
           <article>
-            <h3>3. Seleccionar la iso de ubuntu</h3>
+            <h4>3. Seleccionar la iso de ubuntu</h4>
             <p>
               Selecciona Configuración luego Almacenamiento y pulsa donde dice
               vacío, justo debajo de Controlador: IDE. Pulsa en el icono del
@@ -286,9 +251,9 @@ export default function ubuntuPage(): JSX.Element {
               instrucciones del instalador de ubuntu
             </p>
           </article>
-          <Question question={question} />
+          <Question question={question1} />
         </aside>
-      </section>
+      </main>
     </section>
   )
 }

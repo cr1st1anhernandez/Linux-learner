@@ -1,10 +1,8 @@
 export interface DistroProps {
   name: string
   text: string
-  icon: string
+  icon: JSX.Element
   url: string
-  color: string
-  colorHover: string
 }
 
 export interface QuestionProps {

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm7fcb3bg06p0tdtgij0",
+  "parentID": "mig_cm7fbv244015etohld00",
+  "checksum": "1:3726e76d3ea6c65167310a3bef270cede6ad64010ef1f7762673bc9012100f3e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "likes",
+          "type": "json"
+        },
+        "table": "users"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mig_clgkldeca0el0e9ckgng",
+  "parentID": "mig_clgklbghodmhb2t0nhdg",
+  "checksum": "1:a0203080034bb1f4359017e884343213e48569d6feda0274d3cfb5d08ad80584",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "comments",
+        "oldName": "coments"
+      }
+    }
+  ]
+}

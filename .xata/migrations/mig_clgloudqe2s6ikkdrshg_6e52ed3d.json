@@ -1,0 +1,18 @@
+{
+  "id": "mig_clgloudqe2s6ikkdrshg",
+  "parentID": "mig_clglmseca0el0e9ckjdg",
+  "checksum": "1:6e52ed3d762d0bb533805cda72a332761476dc1126379a1117a093c2fa2390de",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "imageUrl",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "url"
+        },
+        "table": "comments"
+      }
+    }
+  ]
+}

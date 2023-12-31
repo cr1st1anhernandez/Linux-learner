@@ -1,0 +1,13 @@
+{
+  "id": "mig_cm6fkvq44015etohl280",
+  "parentID": "mig_cm65vo244015etohkue0",
+  "checksum": "1:1df071740744ea5aa056a9d6059e30f43a2d06f58c2f75d6f9bc5110c2b54ca5",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "replies",
+        "table": "comments"
+      }
+    }
+  ]
+}

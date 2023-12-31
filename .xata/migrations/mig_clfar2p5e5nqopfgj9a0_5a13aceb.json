@@ -1,0 +1,11 @@
+{
+  "id": "mig_clfar2p5e5nqopfgj9a0",
+  "checksum": "1:5a13acebe0378b37347c84546eaf1dc2f4ff3d38ba7aef0e543fe99df52d2acc",
+  "operations": [
+    {
+      "addTable": {
+        "table": "coments"
+      }
+    }
+  ]
+}
