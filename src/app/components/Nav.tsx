@@ -93,41 +93,27 @@ export default function Nav(): JSX.Element {
 
   const Menu = (): JSX.Element => {
     return (
-      <Dropdown className="red-light dark:red-dark">
-        <NavbarItem className="hidden sm:flex">
-          <DropdownTrigger>
-            <Button
-              disableRipple
-              className="bg-transparent p-0 data-[hover=true]:bg-transparent"
-              endContent={icons.chevron}
-              variant="light"
-            >
-              CONTENIDO
-            </Button>
-          </DropdownTrigger>
-        </NavbarItem>
-        <DropdownMenu
-          aria-label="Linux Learner Content"
-          className="w-[340px]"
-          itemClasses={{
-            base: 'gap-4',
-          }}
-        >
-          {menuItems.map((item) => (
-            <DropdownItem
-              key={item.key}
-              description={item.description}
-              startContent={item.startContent}
-              href={item.href}
-              onPress={() => {
-                setIsMenuOpen(false)
-              }}
-            >
-              {item.title}
-            </DropdownItem>
-          ))}
-        </DropdownMenu>
-      </Dropdown>
+      <DropdownMenu
+        aria-label="Linux Learner Content"
+        className="w-[340px]"
+        itemClasses={{
+          base: 'gap-4',
+        }}
+      >
+        {menuItems.map((item) => (
+          <DropdownItem
+            key={item.key}
+            description={item.description}
+            startContent={item.startContent}
+            href={item.href}
+            onPress={() => {
+              setIsMenuOpen(false)
+            }}
+          >
+            {item.title}
+          </DropdownItem>
+        ))}
+      </DropdownMenu>
     )
   }
 
@@ -182,7 +168,21 @@ export default function Nav(): JSX.Element {
             COMENTARIOS
           </Link>
         </NavbarItem>
-        <Menu />
+        <Dropdown className="red-light dark:red-dark">
+          <NavbarItem className="hidden lg:flex">
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="bg-transparent p-0 data-[hover=true]:bg-transparent"
+                endContent={icons.chevron}
+                variant="light"
+              >
+                CONTENIDO
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+          <Menu />
+        </Dropdown>
         <NavbarItem className="hidden sm:flex">
           <ThemeSwitcher />
         </NavbarItem>
@@ -249,9 +249,21 @@ export default function Nav(): JSX.Element {
             COMENTARIOS
           </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem className="flex lg:hidden">
+        <Dropdown className="red-light dark:red-dark">
+          <NavbarItem className="flex lg:hidden">
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="bg-transparent p-0 data-[hover=true]:bg-transparent"
+                endContent={icons.chevron}
+                variant="light"
+              >
+                CONTENIDO
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
           <Menu />
-        </NavbarMenuItem>
+        </Dropdown>
         <NavbarMenuItem className="flex cursor-pointer lg:hidden">
           <SignedOut>
             <SignInButton redirectUrl="/">
