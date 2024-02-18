@@ -1,74 +1,69 @@
-import { Eye } from '@/app/icons/Eye'
-import { EyeOff } from '@/app/icons/EyeOff'
-import emailjs from '@emailjs/browser'
-import { Card, Input, Textarea } from '@nextui-org/react'
-import { useRef, useState, type FormEvent } from 'react'
-import { toast } from 'sonner'
+import emailjs from "@emailjs/browser";
+import { Card, Input, Textarea } from "@nextui-org/react";
+import { useRef, useState, type FormEvent } from "react";
+import { toast } from "sonner";
 
 const Contact: React.FC = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [errors, setErrors] = useState({ name: '', email: '', message: '' })
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
 
   const validateForm = (): boolean => {
-    const newErrors = { name: '', email: '', message: '' }
-    let formIsValid = true
+    const newErrors = { name: "", email: "", message: "" };
+    let formIsValid = true;
 
     if (name.length === 0) {
-      formIsValid = false
-      newErrors.name = 'No se permiten campos vacíos'
+      formIsValid = false;
+      newErrors.name = "No se permiten campos vacíos";
     }
 
-    if (email.length === 0 || !email.includes('@')) {
-      formIsValid = false
-      newErrors.email = 'Por favor, introduce un correo electrónico válido'
+    if (email.length === 0 || !email.includes("@")) {
+      formIsValid = false;
+      newErrors.email = "Por favor, introduce un correo electrónico válido";
     }
 
     if (message.length === 0) {
-      formIsValid = false
-      newErrors.message = 'No se permiten campos vacíos'
+      formIsValid = false;
+      newErrors.message = "No se permiten campos vacíos";
     }
 
-    setErrors(newErrors)
-    return formIsValid
-  }
-  const form = useRef<HTMLFormElement>(null)
+    setErrors(newErrors);
+    return formIsValid;
+  };
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: FormEvent): void => {
-    e.preventDefault()
+    e.preventDefault();
     if (form.current != null && validateForm()) {
       const promise = emailjs
         .sendForm(
-          'service_hie27kx',
-          'template_00nbtzs',
+          "service_hie27kx",
+          "template_00nbtzs",
           form.current,
-          'aQwAg3DFDgmw6ivUR',
+          "aQwAg3DFDgmw6ivUR",
         )
         .then(
           (result) => {
-            return result
+            return result;
           },
           (error) => {
-            throw error
+            throw error;
           },
-        )
+        );
 
       toast.promise(promise, {
-        loading: 'Cargando...',
+        loading: "Cargando...",
         success: (result) => {
-          return `Email enviado correctamente: ${result.text}`
+          return `Email enviado correctamente: ${result.text}`;
         },
-        error: 'Error al enviar email',
-      })
+        error: "Error al enviar email",
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
     }
-  }
-
-  const [isVisible, setIsVisible] = useState(false)
-
-  const toggleVisibility = (): void => {
-    setIsVisible(!isVisible)
-  }
+  };
 
   return (
     <Card className="relative flex w-full flex-col gap-4 p-5">
@@ -82,56 +77,44 @@ const Contact: React.FC = () => {
           label="Username"
           type="text"
           variant="bordered"
-          name="username"
+          name="user_name"
           labelPlacement="outside"
           placeholder="Enter your username"
           isRequired
           value={name}
           onChange={(e) => {
-            setName(e.target.value)
+            setName(e.target.value);
           }}
         />
         {errors.name.length > 0 && (
           <p className="font-bold text-red-500">{errors.name}</p>
         )}
         <Input
-          label="Password"
-          name="password"
+          label="Email"
+          name="user_email"
           variant="bordered"
-          placeholder="Enter your password"
+          placeholder="Enter your email"
           value={email}
+          type={"text"}
           labelPlacement="outside"
           isRequired
           onChange={(e) => {
-            setEmail(e.target.value)
+            setEmail(e.target.value);
           }}
-          endContent={
-            <button
-              className="focus:outline-none"
-              type="button"
-              onClick={toggleVisibility}
-            >
-              {isVisible ? (
-                <EyeOff className="pointer-events-none text-2xl text-default-400" />
-              ) : (
-                <Eye className="pointer-events-none text-2xl text-default-400" />
-              )}
-            </button>
-          }
-          type={isVisible ? 'text' : 'password'}
         />
         {errors.email.length > 0 && (
           <p className="font-bold text-red-500">{errors.email}</p>
         )}
         <Textarea
           isRequired
+          name="message"
           label="Mensaje"
           labelPlacement="outside"
           placeholder="Enter your mensaje"
           value={message}
           variant="bordered"
           onChange={(e) => {
-            setMessage(e.target.value)
+            setMessage(e.target.value);
           }}
         />
         {errors.message.length > 0 && (
@@ -144,7 +127,7 @@ const Contact: React.FC = () => {
         />
       </form>
     </Card>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
