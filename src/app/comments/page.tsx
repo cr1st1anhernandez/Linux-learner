@@ -112,7 +112,8 @@ export default async function Comments(): Promise<JSX.Element> {
   return (
     <section className="grid place-items-center pt-4">
       <Toaster position="bottom-right" />
-      <Card className="flex w-full max-w-5xl flex-col gap-4 p-6">
+      <Card className="flex w-full max-w-5xl flex-col gap-4">
+        <div className="flex w-full flex-col gap-4 p-6">
         <header>
           <div className="relative w-fit">
             <h3>Comentarios</h3>
@@ -124,7 +125,8 @@ export default async function Comments(): Promise<JSX.Element> {
         <div className="flex flex-col">
           <AddComent userId={userId} handleCreateComment={createComment} />
         </div>
-        <article className="flex max-h-[25rem] flex-col gap-8 overflow-y-auto">
+        </div>
+        <article className="flex max-h-[25rem] flex-col gap-8 overflow-y-auto p-6">
           {comments.map((comment) => (
             <div key={comment.id} className="flex flex-col">
               <Comment
